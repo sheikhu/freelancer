@@ -9,6 +9,9 @@ class ProjectsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
+        $skills_id = Skill::lists('id');
+        $categories_id = Category::lists('id');
+
 		foreach(range(1, 10) as $index)
 		{
 			$p = Project::create([
@@ -18,9 +21,22 @@ class ProjectsTableSeeder extends Seeder {
                 'expires_at'    =>  Carbon::now()->addDay($faker->numberBetween(4, 20))
 			]);
 
-            if($faker->boolean)
-                $p->skills()->save(Skill::find($index));
+            $p->skills()->sync(
+                $faker->randomElements(
+                    $skills_id,
+                    $faker->randomElement(range(1, 3))
+                    )
+                );
+
+            $p->categories()->sync(
+                $faker->randomElements(
+                    $categories_id,
+                    $faker->randomElement(range(1, 3))
+                    )
+                );
+
 		}
+
 	}
 
 }

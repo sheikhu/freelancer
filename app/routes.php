@@ -18,6 +18,6 @@ Route::resource('skills', 'SkillsController');
 
 Route::get('/', function(){
 
-    return View::make('index');
+    return View::make('index', ['projects' => Project::paginate(10)]);
 });
 ?>

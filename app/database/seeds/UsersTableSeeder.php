@@ -9,6 +9,8 @@ class UsersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
+        $skills_id = Skill::lists('id');
+
 		foreach(range(1, 10) as $index)
 		{
 			$user = User::create([
@@ -17,8 +19,12 @@ class UsersTableSeeder extends Seeder {
                 'password'  =>  Hash::make('password')
 			]);
 
-            if($faker->boolean)
-                $user->skills()->save(Skill::find($index));
+            $user->skills()->sync(
+                $faker->randomElements(
+                    $skills_id,
+                    $faker->randomElement(range(1, 3))
+                    )
+                );
 		}
 	}
 

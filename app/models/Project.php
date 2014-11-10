@@ -12,7 +12,7 @@ class Project extends \Eloquent {
 
     public function categories()
     {
-        return $this->belongsToMany('Categorie');
+        return $this->morphToMany('Category', 'categorizable');
     }
 
     public function skills()
