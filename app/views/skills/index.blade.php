@@ -1,0 +1,1 @@
+C:\wamp\www\freelancer\app/views/skills/index.blade.php

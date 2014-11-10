@@ -1,0 +1,1 @@
+C:\wamp\www\freelancer\app/views/categories/show.blade.php

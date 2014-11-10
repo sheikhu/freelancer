@@ -1,0 +1,1 @@
+C:\wamp\www\freelancer\app/views/projects/edit.blade.php
