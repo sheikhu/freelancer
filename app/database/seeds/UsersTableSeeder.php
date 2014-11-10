@@ -17,7 +17,8 @@ class UsersTableSeeder extends Seeder {
                 'password'  =>  Hash::make('password')
 			]);
 
-            $user->skills()->sync([Skill::find($index)->id]);
+            if($faker->boolean)
+                $user->skills()->save(Skill::find($index));
 		}
 	}
 

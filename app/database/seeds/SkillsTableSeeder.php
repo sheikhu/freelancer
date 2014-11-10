@@ -8,14 +8,28 @@ class SkillsTableSeeder extends Seeder {
 	public function run()
 	{
 		$faker = Faker::create();
-
-		foreach(range(1, 10) as $index)
+        $skills = [
+        'HTML',
+        'CSS',
+        'Web Design',
+        'Android Development',
+        'Internet Marketing',
+        'Article Writing',
+        'JavaScript',
+        'Article Design',
+        'Joomla',
+        'Wordpress',
+        'Google',
+        'Search Engine Optimization (SEO)',
+        'Developer',
+        'Sale and Marketing',
+        'Frontend Developer'
+        ];
+		foreach($skills as $skill)
 		{
-            $name = $faker->sentence($faker->randomElement([2,3,4]));
-			
             Skill::create([
-                'name'  =>  $name,
-                'slug'  =>  Str::slug($name)
+                'name'  =>  $skill,
+                'slug'  =>  Str::slug($skill)
 			]);
 		}
 	}

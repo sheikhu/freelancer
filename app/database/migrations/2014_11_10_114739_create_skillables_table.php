@@ -17,6 +17,7 @@ class CreateSkillablesTable extends Migration {
 			$t->increments('id');
 			$t->integer('skill_id');
 			$t->morphs('skillable');
+
 		});
 	}
 

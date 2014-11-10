@@ -18,8 +18,8 @@ class ProjectsTableSeeder extends Seeder {
                 'expires_at'    =>  Carbon::now()->addDay($faker->numberBetween(4, 20))
 			]);
 
-            
-            $p->skills()->save(Skill::find($index));
+            if($faker->boolean)
+                $p->skills()->save(Skill::find($index));
 		}
 	}
 

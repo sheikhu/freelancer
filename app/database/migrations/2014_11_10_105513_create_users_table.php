@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration {
 			$t->string('email')->unique();
 			$t->string('name');
 			$t->string('position')->nullable();
+			$t->integer('rating')->nullable();
 			$t->string('password');
 			$t->string('remember_token', 100)->nullable();
 			$t->timestamps();
