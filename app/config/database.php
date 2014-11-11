@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'mysql2.alwaysdata.com ',
+			'host'      => 'mysql2.alwaysdata.com',
 			'database'  => 'sheikhu_freelancer',
 			'username'  => 'sheikhu',
 			'password'  => 'xcution',
